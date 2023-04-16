@@ -1,17 +1,16 @@
-import { knex as setupKnex, Knex } from 'knex'
-import { env } from './env'
+import { knex as setupKnex, Knex } from "knex";
+import { env } from "./env";
 
 export const config: Knex.Config = {
-  // Infos obrigatorias para conexão com o banco, essas abaixo são as obrigatórias para o sqlite, para os outros olhar a documentação
-  client: 'sqlite',
+  client: "sqlite",
   connection: {
-    filename: env.DATABASE_URL, // ./ Pois o caminho sempre vai ser relativo de onde estou executando o código, ou seja na raiz
+    filename: env.DATABASE_URL,
   },
-  useNullAsDefault: true, // No sqlite não há uma opção para setar um valor como default, mas podemos setar null como default
+  useNullAsDefault: true,
   migrations: {
-    extension: 'ts',
-    directory: './db/migrations',
+    extension: "ts",
+    directory: "./db/migrations",
   },
-}
+};
 
-export const knex = setupKnex(config)
+export const knex = setupKnex(config);

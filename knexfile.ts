@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
-import { config } from './src/database'
+import { config } from "./src/database";
 
-export default config
+export default config;
